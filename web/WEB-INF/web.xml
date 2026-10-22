@@ -37,4 +37,13 @@
         <servlet-name>CatServlet</servlet-name>
         <url-pattern>/cat</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DogServlet</servlet-name>
+        <servlet-class>org.example.servlet.pratice.DogServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DogServlet</servlet-name>
+        <url-pattern>/dog</url-pattern>
+    </servlet-mapping>
 </web-app>
