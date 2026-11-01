@@ -20,12 +20,13 @@ public class PigServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         countGet++;
-        System.out.println("DogServlet doGet, count: " + countGet + ", client IP: " + req.getLocalAddr());
+        System.out.println("DogServlet doGet, count: " + countGet + ", client IP: " + req.getRemoteAddr());
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         countPost++;
-        System.out.println("DogServlet doPost, count: " + countPost + ", client IP: " + req.getLocalAddr());
+        // System.out.println("DogServlet doPost, count: " + countPost + ", client IP: " + req.getLocalAddr());
+        System.out.println("DogServlet doPost, count: " + countPost + ", client IP: " + req.getRemoteAddr()); // DogServlet doPost, count: 1, client IP: 0:0:0:0:0:0:0:1
     }
 }
