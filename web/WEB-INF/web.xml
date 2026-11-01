@@ -5,18 +5,12 @@
          version="4.0">
     <!--servlet标签给Tomcat配置Servlet 程序-->
     <servlet>
-        <!--servlet-name标签Servlet程序起一个别名（一般是类名） -->
         <servlet-name>HelloServlet</servlet-name>
-        <!--servlet-class是Servlet程序的全类名-->
         <servlet-class>org.example.servlet.HelloServlet</servlet-class>
         <load-on-startup>1</load-on-startup>
     </servlet>
-
-    <!--servlet-mapping标签给servlet程序配置访问地址-->
     <servlet-mapping>
-        <!--servlet-name标签的作用是告诉服务器，我当前配置的地址给哪个Servlet使用-->
         <servlet-name>HelloServlet</servlet-name>
-        <!--url-pattern对外提供访问的地址为：http://ip【域名】：port/工程路径/helo-->
         <url-pattern>/hello</url-pattern>
     </servlet-mapping>
 
@@ -46,4 +40,41 @@
         <servlet-name>DogServlet</servlet-name>
         <url-pattern>/dog</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DBServlet</servlet-name>
+        <servlet-class>org.example.servlet.DBServlet</servlet-class>
+        <init-param>
+            <param-name>user</param-name>
+            <param-value>root</param-value>
+        </init-param>
+        <init-param>
+            <param-name>pwd</param-name>
+            <param-value>123456</param-value>
+        </init-param>
+<!--        <load-on-startup>1</load-on-startup>-->
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DBServlet</servlet-name>
+        <url-pattern>/db</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+            <servlet-name>OrderServlet</servlet-name>
+        <servlet-class>org.example.servlet.servletcontext.OrderServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>OrderServlet</servlet-name>
+        <url-pattern>/order</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>PayServlet</servlet-name>
+        <servlet-class>org.example.servlet.servletcontext.PayServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PayServlet</servlet-name>
+        <url-pattern>/pay</url-pattern>
+    </servlet-mapping>
+
 </web-app>
