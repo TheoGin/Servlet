@@ -13,6 +13,8 @@ public class RegisterServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        // 在接受之前设置一下编码
+        req.setCharacterEncoding("utf-8");
         String username = req.getParameter("username");
         String pwd1 = req.getParameter("pwd1");
         String pwd2 = req.getParameter("pwd2");
